@@ -1,7 +1,7 @@
-Spring Boot, MongoDB, Rest API
-Build Restful CRUD API test using Spring Boot, MongoDB.
+ # Spring Boot, MongoDB, Rest API #
+** Build Restful CRUD API test using Spring Boot, MongoDB.** 
 
-Steps to Setup
+* Steps to Setup
 1. Clone the application
 
 git clone https://github.com/mazenhadjali/SpringBoot-3.0---MongoDB-Restfull-API
