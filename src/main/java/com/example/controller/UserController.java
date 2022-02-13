@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.User;
@@ -25,22 +26,26 @@ public class UserController {
 	private UserServices UserS;
 	
 	@GetMapping
+	@ResponseBody
 	public List<User> getUsers(){
 		return UserS.getAllUsers();
 	}
 	
 	@PostMapping
+	@ResponseBody
 	public void addUser(@RequestBody User user) {
 	    UserS.addUser(user);
 	}
 	
 	//http://localhost:8080/users/62059194b5b04700b0a66aff <---- this is the id in path not in req params /****
 	@DeleteMapping(value = "/{id}")
+	@ResponseBody
 	public void deleteBill(@PathVariable("id") String id){
 		UserS.deleteUser(id);
    }
 	 
 	@GetMapping(value = "/{id}")
+	@ResponseBody
 	public Optional<User> getuserbyid(@PathVariable("id") String id){
 		return UserS.getuserbyid(id);
 	}
